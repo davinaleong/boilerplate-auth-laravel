@@ -22,6 +22,7 @@
   </head>
   <body class="@yield('body-class')">
     @yield('content')
+    @yield('dialogs')
     @yield('scripts')
   </body>
 </html>

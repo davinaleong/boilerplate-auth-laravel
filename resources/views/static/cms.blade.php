@@ -38,7 +38,7 @@
         <div class="aside__top__left">
             <a href="#" class="brand" aria-label="Work Logger">
                 <img
-                    src="./src/assets/images/logo.svg"
+                    src="{{ asset('assets/images/logo.svg') }}"
                     alt="logo"
                     width="80"
                     height="80"
