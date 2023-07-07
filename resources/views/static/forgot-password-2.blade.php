@@ -1,6 +1,6 @@
 @extends('static.auth')
 
-@section('page-name', '- Forgot Password')
+@section('page-name', ' - Forgot Password')
 
 @section('auth-content')
 <p class="m-v-b-400">Enter your new password.</p>

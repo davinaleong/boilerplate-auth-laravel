@@ -1,6 +1,6 @@
 @extends('static.cms')
 
-@section('page-name', '- View')
+@section('page-name', ' - View')
 
 @section('cms-content')
 <section class="flow">

@@ -1,6 +1,6 @@
 @extends('static.cms')
 
-@section('page-name', '- Dashboard')
+@section('page-name', ' - Dashboard')
 
 @section('cms-content')
 <div class="layout-grid layout-grid-dashboard">
