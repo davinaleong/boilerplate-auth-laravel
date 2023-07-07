@@ -1,94 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+@extends('static.layout')
 
-    <title>Work Logger Template</title>
+@section('page_name', '- Landing')
 
-    <link rel="icon" type="image/svg+xml" href="{{ asset('images/logo.svg') }}" />
-    @vite('resources/styles/app.scss')
+@section('content')
+<header class="landing__heading bg-full bg-landing-1 flow p-v-400">
+    <h1 class="fz-900 clr-gray-50 ta-center">
+    <small>Welcome to</small><br />
+    <strong>Work Logger</strong>
+    </h1>
+    <p class="fz-500">By {{ env('APP_AUTHOR', 'Davina Leong') }}</p>
+</header>
 
-    <script
-      src="https://kit.fontawesome.com/1b82ea5cb2.js"
-      crossorigin="anonymous"
-    ></script>
-     @vite('resources/scripts/app.js')
-  </head>
-  <body class="landing">
-    <header class="landing__heading bg-full bg-landing-1 flow p-v-400">
-      <h1 class="fz-900 clr-gray-50 ta-center">
-        <small>Welcome to</small><br />
-        <strong>Work Logger</strong>
-      </h1>
-    </header>
-
-    <main class="landing__main bg-gray-50">
-      <div class="main-content-wrapper flow p-v-400">
+<main class="landing__main bg-gray-50">
+    <div class="main-content-wrapper flow p-v-400">
         <h2 class="fz-700">Please login</h2>
 
         <form action="#" method="post">
-          <div class="form-group">
+            <div class="form-group">
             <label for="email" class="form-label">
-              <i class="fa-duotone fa-envelope"></i> Email
+                <i class="fa-duotone fa-envelope"></i> Email
             </label>
             <div class="form-field-wrapper">
-              <input
+                <input
                 type="text"
                 name="email"
                 id="email"
                 class="form-field"
                 required
-              />
+                />
             </div>
-          </div>
-          <div class="form-group">
+            </div>
+            <div class="form-group">
             <label for="password" class="form-label">
-              <i class="fa-duotone fa-key"></i> Password
+                <i class="fa-duotone fa-key"></i> Password
             </label>
             <div class="form-field-wrapper">
-              <input
+                <input
                 type="password"
                 name="password"
                 id="password"
                 class="form-field"
                 required
-              />
+                />
             </div>
-          </div>
-          <div class="form-group">
+            </div>
+            <div class="form-group">
             <label for="checkbox-remember-me" class="form-label">
-              <i class="fa-duotone fa-key"></i> Remember Me
+                <i class="fa-duotone fa-key"></i> Remember Me
             </label>
             <div class="form-field-wrapper">
-              <label
+                <label
                 for="checkbox-remember-me"
                 class="form-radio-checkbox-wrapper form-radio-checkbox-wrapper-gray"
-              >
+                >
                 Yes
                 <input
-                  type="checkbox"
-                  name="checkbox-remember-me"
-                  id="checkbox-remember-me"
-                  class="form-field"
-                  value="1"
+                    type="checkbox"
+                    name="checkbox-remember-me"
+                    id="checkbox-remember-me"
+                    class="form-field"
+                    value="1"
                 />
                 <span class="form-checkbox"></span>
-              </label>
+                </label>
             </div>
-          </div>
+            </div>
 
-          <div class="btn-group m-v-t-400">
+            <div class="btn-group m-v-t-400">
             <button class="btn btn-primary" type="submit">
-              <i class="fa-solid fa-sharp fa-check"></i> Submit
+                <i class="fa-solid fa-sharp fa-check"></i> Submit
             </button>
 
             <a href="./forgot-password-1.html" class="btn btn-gray">
-              <i class="fa-solid fa-sharp fa-question"></i> Forgot Password
+                <i class="fa-solid fa-sharp fa-question"></i> Forgot Password
             </a>
-          </div>
+            </div>
         </form>
-      </div>
-    </main>
-  </body>
-</html>
+    </div>
+</main>
+@endsection
