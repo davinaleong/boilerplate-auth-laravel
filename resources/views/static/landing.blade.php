@@ -10,10 +10,13 @@
     </h1>
     <p class="fz-500">By {{ env('APP_AUTHOR', 'Davina Leong') }}</p>
 
-    <p>
+    <div class="btn-container">
         <a href="login" class="btn btn-accent-2">
             <i class="fa-solid fa-sign-in"></i> Login
         </a>
-    </p>
+        <a href="login" class="btn btn-secondary">
+            <i class="fa-solid fa-add"></i> Register
+        </a>
+    </div>
 </header>
 @endsection
