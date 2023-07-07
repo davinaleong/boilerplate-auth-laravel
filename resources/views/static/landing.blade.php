@@ -1,6 +1,7 @@
-@extends('static.layout')
+@extends('static.app')
 
-@section('page_name', '- Landing')
+@section('page-name', '- Landing')
+@section('body-class', 'landing')
 
 @section('content')
 <header class="landing__heading bg-full bg-landing-1 flow p-v-400">
@@ -71,7 +72,7 @@
                 <i class="fa-solid fa-sharp fa-check"></i> Submit
             </button>
 
-            <a href="./forgot-password-1.html" class="btn btn-gray">
+            <a href="forgot-password-1" class="btn btn-gray">
                 <i class="fa-solid fa-sharp fa-question"></i> Forgot Password
             </a>
             </div>

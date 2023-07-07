@@ -8,7 +8,7 @@
     <meta name="keywords" content="{{ env('APP_KEYWORDS', '') }}">
     @yield('meta')
 
-    <title>{{ env('APP_NAME', 'Bolierplate Auth Laravel') }}@yield('page_name')</title>
+    <title>{{ env('APP_NAME', 'Bolierplate Auth Laravel') }}@yield('page-name')</title>
 
     <link rel="icon" type="image/svg+xml" href="{{ asset('assets/images/logo.svg') }}" />
     @vite('resources/styles/app.scss')
@@ -20,7 +20,7 @@
     ></script>
      @vite('resources/scripts/app.js')
   </head>
-  <body class="landing">
+  <body class="@yield('body-class')">
     @yield('content')
     @yield('scripts')
   </body>
