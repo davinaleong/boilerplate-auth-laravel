@@ -16,6 +16,9 @@
     <div class="main-content-wrapper flow p-v-400">
         <h2 class="fz-700">Please login</h2>
 
+        @include('components.card-message')
+        @include('components.card-errors')
+
         <form action="#" method="post">
             <div class="form-group">
             <label for="email" class="form-label">
