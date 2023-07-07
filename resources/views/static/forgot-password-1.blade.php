@@ -24,10 +24,10 @@
     </div>
 
     <div class="btn-group">
-        <button class="btn btn-primary" type="submit">
+        <a href="forgot-password-2" class="btn btn-primary">
             <i class="fa-solid fa-sharp fa-check"></i> Submit
-        </button>
-        <a href="#" class="btn btn-gray">
+        </a>
+        <a href="landing" class="btn btn-gray">
             <i class="fa-solid fa-sharp fa-ban"></i> Cancel
         </a>
     </div>
