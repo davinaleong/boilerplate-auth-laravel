@@ -15,9 +15,13 @@
             </a>
         </div>
         <div class="aside__top__right">
-            <button class="btn btn-primary">
-                Logout <i class="fa fa-sign-out"></i>
-            </button>
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button class="btn btn-primary" type="submit">
+                    Logout <i class="fa fa-sign-out"></i>
+                </button>
+            </form>
+            
 
             <button
             class="btn btn-link btn-link-danger"
