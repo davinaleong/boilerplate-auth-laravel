@@ -7,7 +7,32 @@
     Enter your email and password to create an account.
 </p>
 
+@include('components.card-message')
+@include('components.card-errors')
+
 <form method="POST" action="{{ route('register') }}">
+    @csrf
+
+    <div class="form-group @error('name') form-group-danger @enderror">
+        <label for="name" class="form-label">
+            <i class="fa-duotone fa-user"></i> Name
+        </label>
+        <div class="form-field-wrapper">
+            <input
+                type="text"
+                name="name"
+                id="name"
+                class="form-field"
+                autofocus
+                required
+            />
+
+            @error('name')
+                <p class="fz-300 text-danger-700">{{ $message }}</p>
+            @enderror
+        </div>
+    </div>
+
     <div class="form-group @error('email') form-group-danger @enderror">
         <label for="email" class="form-label">
             <i class="fa-duotone fa-envelope"></i> Email

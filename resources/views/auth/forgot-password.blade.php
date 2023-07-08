@@ -7,6 +7,9 @@
     Enter your email to receive instructions on how to reset your password.
 </p>
 
+@include('components.card-message')
+@include('components.card-errors')
+
 <form method="POST" action="{{ route('password.email') }}">
     @csrf
 
