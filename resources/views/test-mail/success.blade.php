@@ -11,7 +11,7 @@
 @include('components.card-errors')
 
 <div class="btn-group m-v-t-400" style="--btn-group-gap: var(--size-v-100);">
-    <a href="{{ route('test-mail.index') }}" class="btn btn-gray">
+    <a href="{{ route('test-mail.index') }}" class="btn btn-primary">
         <i class="fa-solid fa-sharp fa-send"></i> Send Another Message
     </a>
     <a href="{{ route('welcome') }}" class="btn btn-gray">
