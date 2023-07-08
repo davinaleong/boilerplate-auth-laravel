@@ -82,7 +82,7 @@
 
             <div class="btn-group m-v-t-400">
                 <button class="btn btn-primary" type="submit">
-                    <i class="fa-solid fa-sharp fa-check"></i> Submit
+                    <i class="fa-solid fa-sharp fa-sign-in"></i> Login
                 </button>
 
                 <a href="{{ route('password.request') }}" class="btn btn-gray">

@@ -11,7 +11,7 @@
     <p class="fz-500">By {{ env('APP_AUTHOR', 'Davina Leong') }}</p>
 
     <div class="btn-container">
-        <a href="{{ route('login') }}" class="btn btn-accent-2">
+        <a href="{{ route('login') }}" class="btn btn-accent-2" autofocus>
             <i class="fa-solid fa-sharp fa-sign-in"></i> Login
         </a>
         <a href="{{ route('register') }}" class="btn btn-secondary">

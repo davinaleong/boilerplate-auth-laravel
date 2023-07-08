@@ -7,7 +7,7 @@
     Enter your email to receive instructions on how to reset your password.
 </p>
 
-<form class="flow" method="POST" action="{{ route('password.email') }}">
+<form method="POST" action="{{ route('password.email') }}">
     @csrf
 
     <div class="form-group @error('email') form-group-danger @enderror">
@@ -20,6 +20,7 @@
                 name="email"
                 id="email"
                 class="form-field"
+                autofocus
                 required
             />
 
@@ -29,9 +30,9 @@
         </div>
     </div>
 
-    <div class="btn-group">
+    <div class="btn-group m-v-t-400">
         <button class="btn btn-primary" type="submit">
-            <i class="fa-solid fa-sharp fa-check"></i> Submit
+            <i class="fa-solid fa-sharp fa-envelope"></i> Email Password Reset Link
         </button>
         <a href="{{ route('login') }}" class="btn btn-gray">
             <i class="fa-solid fa-sharp fa-ban"></i> Cancel
