@@ -8,10 +8,7 @@
         <header class="section__header">
         <h1 class="fz-700">Today's Logs</h1>
 
-        <p>
-            Today's date:
-            <span class="clr-gray-400 fs-italic">29 May 2023</span>
-        </p>
+        @include('components.today')
 
         <ul class="breadcrumbs">
             <li class="breadcrumb-item">
