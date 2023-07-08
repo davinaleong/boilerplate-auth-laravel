@@ -64,7 +64,7 @@
                 </label>
                 <div class="form-field-wrapper">
                     <label
-                        for="checkbox-remember-me"
+                        for="remember_me"
                         class="form-radio-checkbox-wrapper form-radio-checkbox-wrapper-gray"
                         >
                         Yes
