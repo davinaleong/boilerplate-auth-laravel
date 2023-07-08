@@ -12,10 +12,10 @@
 
     <div class="btn-container">
         <a href="{{ route('login') }}" class="btn btn-accent-2">
-            <i class="fa-solid fa-sign-in"></i> Login
+            <i class="fa-solid fa-sharp fa-sign-in"></i> Login
         </a>
         <a href="{{ route('register') }}" class="btn btn-secondary">
-            <i class="fa-solid fa-add"></i> Register
+            <i class="fa-solid fa-sharp fa-add"></i> Register
         </a>
     </div>
 </header>

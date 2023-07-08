@@ -88,6 +88,10 @@
                 <a href="{{ route('password.request') }}" class="btn btn-gray">
                     <i class="fa-solid fa-sharp fa-question"></i> Forgot Password
                 </a>
+
+                <a href="{{ route('register') }}" class="btn btn-secondary">
+                    <i class="fa-solid fa-sharp fa-plus"></i> Register
+                </a>
             </div>
         </form>
     </div>
