@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TestMailController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\Cms\DashboardController;
 use Illuminate\Support\Facades\Route;
@@ -20,6 +21,12 @@ Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 
 Route::get('/static/{page}', function (string $page) {
     return view("static.$page");
+});
+
+Route::prefix('test-mail')->name('test-mail.')->controller(TestMailController::class)->group(function () {
+    Route::get('/', 'index')->name('index');
+    Route::post('/', 'store')->name('store');
+    Route::get('/success', 'success')->name('success');
 });
 
 Route::prefix('cms')->name('cms.')->middleware(['auth', 'verified'])->group(function () {
