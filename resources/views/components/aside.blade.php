@@ -13,6 +13,7 @@
                     height="80"
                 />
             </a>
+            <p class="fz-300">User: <span class="text-primary-700">{{ Auth::user()->name }}</span></p>
         </div>
         <div class="aside__top__right">
             <form action="{{ route('logout') }}" method="POST">
