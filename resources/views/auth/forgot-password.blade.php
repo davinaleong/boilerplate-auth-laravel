@@ -1,4 +1,4 @@
-@extends('static.auth')
+@extends('layouts.auth')
 
 @section('page-name', ' - Forgot Password')
 

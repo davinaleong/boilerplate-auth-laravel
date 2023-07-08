@@ -1,4 +1,4 @@
-@extends('static.app')
+@extends('layouts.app')
 
 @section('page-name', ' - Login')
 @section('body-class', 'login')
