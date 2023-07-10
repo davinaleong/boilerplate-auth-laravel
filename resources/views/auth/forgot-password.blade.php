@@ -10,7 +10,7 @@
 @include('components.card-message')
 @include('components.card-errors')
 
-<form method="POST" action="{{ route('password.email') }}">
+<form class="m-v-t-400" method="POST" action="{{ route('password.email') }}">
     @csrf
 
     <div class="form-group @error('email') form-group-danger @enderror">

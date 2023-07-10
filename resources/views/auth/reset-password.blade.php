@@ -1,39 +1,87 @@
-<x-guest-layout>
-    <form method="POST" action="{{ route('password.store') }}">
-        @csrf
+@extends('layouts.auth')
 
-        <!-- Password Reset Token -->
-        <input type="hidden" name="token" value="{{ $request->route('token') }}">
+@section('page-name', ' - Forgot Password')
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email', $request->email)" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+@section('auth-content')
+<p class="m-v-b-400">
+    Enter your email and your new password to reset it.
+</p>
+
+@include('components.card-message')
+@include('components.card-errors')
+
+<form class="m-v-t-400" method="POST" action="{{ route('password.store') }}">
+    @csrf
+
+    <input type="hidden" name="token" value="{{ $request->route('token') }}">
+
+    <div class="form-group @error('email') form-group-danger @enderror">
+        <label for="email" class="form-label">
+            <i class="fa-duotone fa-envelope"></i> Email
+        </label>
+        <div class="form-field-wrapper flow">
+            <input
+                type="email"
+                name="email"
+                id="email"
+                class="form-field"
+                autofocus
+                required
+            />
+
+            @error('email')
+                <p class="fz-300 text-danger-700">{{ $message }}</p>
+            @enderror
         </div>
+    </div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-            <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+    <div class="form-group @error('password') form-group-danger @enderror">
+        <label for="password" class="form-label">
+            <i class="fa-duotone fa-key"></i> Password
+        </label>
+        <div class="form-field-wrapper flow">
+            <input
+                type="password"
+                name="password"
+                id="password"
+                class="form-field"
+                autofocus
+                required
+            />
+
+            @error('password')
+                <p class="fz-300 text-danger-700">{{ $message }}</p>
+            @enderror
         </div>
+    </div>
 
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+    <div class="form-group @error('password_confirmation') form-group-danger @enderror">
+        <label for="password_confirmation" class="form-label">
+            <i class="fa-duotone fa-key"></i> Confirm Password
+        </label>
+        <div class="form-field-wrapper flow">
+            <input
+                type="password"
+                name="password_confirmation"
+                id="password_confirmation"
+                class="form-field"
+                autofocus
+                required
+            />
 
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+            @error('password_confirmation')
+                <p class="fz-300 text-danger-700">{{ $message }}</p>
+            @enderror
         </div>
+    </div>
 
-        <div class="flex items-center justify-end mt-4">
-            <x-primary-button>
-                {{ __('Reset Password') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+    <div class="btn-group m-v-t-400">
+        <button class="btn btn-primary" type="submit">
+            <i class="fa-solid fa-sharp fa-key"></i> Reset Password
+        </button>
+        <a href="{{ route('login') }}" class="btn btn-gray">
+            <i class="fa-solid fa-sharp fa-ban"></i> Cancel
+        </a>
+    </div>
+</form>
+@endsection
