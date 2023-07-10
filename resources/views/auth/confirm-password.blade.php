@@ -1,27 +1,45 @@
-<x-guest-layout>
-    <div class="mb-4 text-sm text-gray-600">
-        {{ __('This is a secure area of the application. Please confirm your password before continuing.') }}
+@extends('layouts.auth')
+
+@section('page-name', ' - Confirm Password')
+
+@section('auth-content')
+<p class="m-v-b-400">
+    Please confirm your password.
+</p>
+
+@include('components.card-message')
+@include('components.card-errors')
+
+<form class="m-v-t-400" method="POST" action="{{ route('password.confirm') }}">
+    @csrf
+
+    <div class="form-group @error('password') form-group-danger @enderror">
+        <label for="password" class="form-label">
+            <i class="fa-duotone fa-key"></i> Password
+        </label>
+        <div class="form-field-wrapper flow">
+            <input
+                type="password"
+                name="password"
+                id="password"
+                class="form-field"
+                autofocus
+                required
+            />
+
+            @error('password')
+                <p class="fz-300 text-danger-700">{{ $message }}</p>
+            @enderror
+        </div>
     </div>
 
-    <form method="POST" action="{{ route('password.confirm') }}">
-        @csrf
-
-        <!-- Password -->
-        <div>
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <div class="flex justify-end mt-4">
-            <x-primary-button>
-                {{ __('Confirm') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+    <div class="btn-group m-v-t-400">
+        <button class="btn btn-primary" type="submit">
+            <i class="fa-solid fa-sharp fa-check"></i> Confirm
+        </button>
+        <a href="{{ route('login') }}" class="btn btn-gray">
+            <i class="fa-solid fa-sharp fa-ban"></i> Cancel
+        </a>
+    </div>
+</form>
+@endsection

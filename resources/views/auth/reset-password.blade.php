@@ -45,7 +45,6 @@
                 name="password"
                 id="password"
                 class="form-field"
-                autofocus
                 required
             />
 
@@ -65,7 +64,6 @@
                 name="password_confirmation"
                 id="password_confirmation"
                 class="form-field"
-                autofocus
                 required
             />
 

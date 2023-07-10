@@ -30,7 +30,7 @@ Route::prefix('test-mail')->name('test-mail.')->controller(TestMailController::c
 });
 
 Route::prefix('cms')->name('cms.')->middleware(['auth', 'verified'])->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 });
 
 // Route::get('/dashboard', function () {
