@@ -12,9 +12,16 @@ use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
+    public function index(Request $request): View
+    {
+        return view('cms.profile.index', [
+            'user' => $request->user(),
+        ]);
+    }
+
     public function edit(Request $request): View
     {
-        return view('profile.edit', [
+        return view('cms.profile.edit', [
             'user' => $request->user(),
         ]);
     }

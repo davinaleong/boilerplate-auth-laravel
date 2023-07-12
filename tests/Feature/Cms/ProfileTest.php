@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\Cms;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -21,6 +21,17 @@ class ProfileTest extends TestCase
         $response = $this
             ->actingAs($user)
             ->get('/cms/profile');
+
+        $response->assertOk();
+    }
+
+    public function test_edit_profile_page_is_displayed(): void
+    {
+        $user = User::factory()->create();
+
+        $response = $this
+            ->actingAs($user)
+            ->get('/cms/profile/edit');
 
         $response->assertOk();
     }
