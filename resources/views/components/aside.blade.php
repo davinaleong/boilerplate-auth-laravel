@@ -5,7 +5,7 @@
 >
     <div class="aside__top m-v-b-600">
         <div class="aside__top__left">
-            <a href="#" class="brand" aria-label="Work Logger">
+            <a href="{{ route('cms.dashboard.index') }}" class="brand" aria-label="Work Logger">
                 <img
                     src="{{ asset('assets/images/logo.svg') }}"
                     alt="logo"
@@ -13,7 +13,7 @@
                     height="80"
                 />
             </a>
-            <p class="fz-300">User: <span class="text-primary-700">{{ Auth::user()->name }}</span></p>
+            <p class="fz-300">User: <a href="{{ route('cms.profile.edit') }}" class="text-primary-500">{{ Auth::user()->name }}</a></p>
         </div>
         <div class="aside__top__right">
             <form action="{{ route('logout') }}" method="POST">
@@ -25,53 +25,53 @@
             
 
             <button
-            class="btn btn-link btn-link-danger"
-            style="--btn-fz: var(--fz-500)"
-            data-element="btn-close-menu"
-            aria-label="Close"
-            >
+                class="btn btn-link btn-link-danger"
+                style="--btn-fz: var(--fz-500)"
+                data-element="btn-close-menu"
+                aria-label="Close"
+                >
                 <i class="fa fa-times"></i>
             </button>
         </div>
     </div>
 
     <ul class="menu flow" role="list">
-    <li class="menu-item" data-active="true" aria-hidden="true">
-        <a href="dashboard.html" class="menu-item__link">
-            <i class="fa-solid fa-sharp fa-dashboard"></i> Dashboard
-        </a>
-    </li>
-    <li class="menu-item" data-active="true" aria-hidden="true">
-        <a href="#" class="menu-item__link menu-item__label">
-            <i class="fa-solid fa-sharp fa-boxes"></i> Module Pages
-        </a>
+        <li class="menu-item" data-active="true" aria-hidden="true">
+            <a href="{{ route('cms.dashboard.index') }}" class="menu-item__link">
+                <i class="fa-solid fa-sharp fa-dashboard"></i> Dashboard
+            </a>
+        </li>
+        <li class="menu-item" data-active="true" aria-hidden="true">
+            <a href="#" class="menu-item__link menu-item__label">
+                <i class="fa-solid fa-sharp fa-boxes"></i> Module Pages
+            </a>
 
-        <div class="sub-menu-wrapper">
-            <div>
-                <ul class="sub-menu flow" role="list">
-                <li style="--flow-spacer: var(--size-v-100)">
-                    <a href="listing" class="menu-item__link">
-                        <i class="fa-solid fa-sharp fa-list"></i> Listing Page
-                    </a>
-                </li>
-                <li style="--flow-spacer: var(--size-v-100)">
-                    <a href="cards" class="menu-item__link">
-                        <i class="fa-solid fa-sharp fa-cards-blank"></i> Cards Page
-                    </a>
-                </li>
-                <li style="--flow-spacer: var(--size-v-100)">
-                    <a href="create-edit" class="menu-item__link">
-                        <i class="fa-solid fa-sharp fa-pencil"></i> Create/Edit Page
-                    </a>
-                </li>
-                <li style="--flow-spacer: var(--size-v-100)">
-                    <a href="view" class="menu-item__link">
-                        <i class="fa-solid fa-sharp fa-eye"></i> View Page
-                    </a>
-                </li>
-                </ul>
+            <div class="sub-menu-wrapper">
+                <div>
+                    <ul class="sub-menu flow" role="list">
+                    <li style="--flow-spacer: var(--size-v-100)">
+                        <a href="listing" class="menu-item__link">
+                            <i class="fa-solid fa-sharp fa-list"></i> Listing Page
+                        </a>
+                    </li>
+                    <li style="--flow-spacer: var(--size-v-100)">
+                        <a href="cards" class="menu-item__link">
+                            <i class="fa-solid fa-sharp fa-cards-blank"></i> Cards Page
+                        </a>
+                    </li>
+                    <li style="--flow-spacer: var(--size-v-100)">
+                        <a href="create-edit" class="menu-item__link">
+                            <i class="fa-solid fa-sharp fa-pencil"></i> Create/Edit Page
+                        </a>
+                    </li>
+                    <li style="--flow-spacer: var(--size-v-100)">
+                        <a href="view" class="menu-item__link">
+                            <i class="fa-solid fa-sharp fa-eye"></i> View Page
+                        </a>
+                    </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </li>
+        </li>
     </ul>
 </aside>
