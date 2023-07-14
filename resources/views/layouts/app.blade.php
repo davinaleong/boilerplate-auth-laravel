@@ -12,7 +12,6 @@
 
     <link rel="icon" type="image/svg+xml" href="{{ asset('assets/images/logo.svg') }}" />
     @vite('resources/styles/app.scss')
-    @yield('styles')
 
     <script
       src="https://kit.fontawesome.com/1b82ea5cb2.js"
@@ -23,6 +22,5 @@
   <body class="@yield('body-class')">
     @yield('content')
     @yield('dialogs')
-    @yield('scripts')
   </body>
 </html>
