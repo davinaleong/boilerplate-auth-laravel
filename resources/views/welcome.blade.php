@@ -3,7 +3,7 @@
 @section('body-class', 'landing bg-full bg-landing-1 flow p-v-400')
 
 @section('content')
-<header class="flow p-v-400">
+<main class="flow p-v-400">
     <h1 class="fz-900 clr-gray-50 ta-center">
         <small>Welcome to</small><br />
         <strong>{{ env('APP_NAME', 'Bolierplate Auth Laravel') }}</strong>
@@ -18,5 +18,5 @@
             <i class="fa-solid fa-sharp fa-add"></i> Register
         </a>
     </div>
-</header>
+</main>
 @endsection
