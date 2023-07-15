@@ -37,7 +37,7 @@ class ProfileController extends Controller
 
         $request->user()->save();
 
-        return Redirect::route('cms.profile.edit')
+        return Redirect::route('cms.profile.show')
             ->with('status', StatusHelper::$PROFILE_UPDATED);
     }
 

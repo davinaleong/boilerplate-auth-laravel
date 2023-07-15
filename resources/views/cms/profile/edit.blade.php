@@ -26,7 +26,7 @@
             @csrf
             @method('patch')
 
-            <div class="form-group">
+            <div class="form-group @error('name') form-group-danger @enderror">
                 <label for="input-name" class="form-label">
                     <i class="fa-duotone fa-user"></i> {{ __('Name') }}
                 </label>
@@ -40,9 +40,13 @@
                         autofocus
                         required
                     />
+
+                    @error('name')
+                        <p class="fz-300 text-danger-700">{{ $message }}</p>
+                    @enderror
                 </div>
             </div>
-            <div class="form-group">
+            <div class="form-group @error('email') form-group-danger @enderror">
                 <label for="input-email" class="form-label">
                     <i class="fa-duotone fa-envelope"></i> {{ __('Email') }}
                 </label>
@@ -55,6 +59,10 @@
                         value="{{ old('email') ? old('email') : $user->email }}"
                         required
                     />
+
+                    @error('email')
+                        <p class="fz-300 text-danger-700">{{ $message }}</p>
+                    @enderror
                 </div>
             </div>
         </div>
@@ -65,7 +73,7 @@
             <i class="fa-solid fa-sharp fa-check"></i>
             <span class="btn-toggle-label__label"> {{ __('Update Profile') }}</span>
         </button>
-        <a href="{{ route('cms.dashboard.index') }}" class="btn btn-gray btn-toggle-label">
+        <a href="{{ route('cms.profile.show') }}" class="btn btn-gray btn-toggle-label">
             <i class="fa-solid fa-sharp fa-ban"></i>
             <span class="btn-toggle-label__label"> {{ __('Cancel') }}</span>
         </a>
@@ -80,7 +88,7 @@
             @csrf
             @method('put')
 
-            <div class="form-group">
+            <div class="form-group @error('current_password') form-group-danger @enderror">
                 <label for="input-current_password" class="form-label">
                     <i class="fa-duotone fa-user"></i> {{ __('Current Password') }}
                 </label>
@@ -93,9 +101,13 @@
                         autofocus
                         required
                     />
+
+                    @error('current_password')
+                        <p class="fz-300 text-danger-700">{{ $message }}</p>
+                    @enderror
                 </div>
             </div>
-            <div class="form-group">
+            <div class="form-group @error('password') form-group-danger @enderror">
                 <label for="input-password" class="form-label">
                     <i class="fa-duotone fa-envelope"></i> {{ __('New Password') }}
                 </label>
@@ -107,9 +119,13 @@
                         class="form-field"
                         required
                     />
+
+                    @error('password')
+                        <p class="fz-300 text-danger-700">{{ $message }}</p>
+                    @enderror
                 </div>
             </div>
-            <div class="form-group">
+            <div class="form-group @error('password_confirmation') form-group-danger @enderror">
                 <label for="input-password_confirmation" class="form-label">
                     <i class="fa-duotone fa-envelope"></i> {{ __('Confirm Password') }}
                 </label>
@@ -121,6 +137,10 @@
                         class="form-field"
                         required
                     />
+
+                    @error('password_confirmation')
+                        <p class="fz-300 text-danger-700">{{ $message }}</p>
+                    @enderror
                 </div>
             </div>
         </div>
@@ -131,7 +151,7 @@
             <i class="fa-solid fa-sharp fa-check"></i>
             <span class="btn-toggle-label__label"> {{ __('Update Password') }}</span>
         </button>
-        <a href="{{ route('cms.dashboard.index') }}" class="btn btn-gray btn-toggle-label">
+        <a href="{{ route('cms.profile.show') }}" class="btn btn-gray btn-toggle-label">
             <i class="fa-solid fa-sharp fa-ban"></i>
             <span class="btn-toggle-label__label"> {{ __('Cancel') }}</span>
         </a>

@@ -27,7 +27,7 @@
                 @case(App\Helpers\StatusHelper::$SETTINGS_UPDATED)
                     {{ __('The settings was updated successfully.') }}
                     @break
-                @case(App\Helpers\StatusHelper::$PROFILE_DELETED)
+                @case(App\Helpers\StatusHelper::$PASSWORD_DELETED)
                     {{ __('Your password was updated successfully.') }}
                     @break
             @endswitch
