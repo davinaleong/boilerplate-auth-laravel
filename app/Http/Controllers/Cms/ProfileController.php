@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Cms;
 
+use App\Helpers\StatusHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProfileUpdateRequest;
 use Illuminate\Http\RedirectResponse;
@@ -37,7 +38,7 @@ class ProfileController extends Controller
         $request->user()->save();
 
         return Redirect::route('cms.profile.edit')
-            ->with('status', 'verification-link-sent');
+            ->with('status', StatusHelper::$PROFILE_UPDATED);
     }
 
     public function destroy(Request $request): RedirectResponse

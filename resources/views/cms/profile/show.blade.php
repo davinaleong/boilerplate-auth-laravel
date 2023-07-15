@@ -64,7 +64,7 @@
     <div class="btn-group" style="--btn-group-gap: var(--size-v-200)">
         <a href="{{ route('cms.profile.edit') }}" class="btn btn-primary btn-toggle-label">
             <i class="fa-solid fa-sharp fa-pencil"></i>
-            <span class="btn-toggle-label__label">Edit</span>
+            <span class="btn-toggle-label__label"> {{ __('Edit') }}</span>
         </a>
         <button
             class="btn btn-danger btn-toggle-label"
@@ -72,11 +72,11 @@
             data-target="delete-dialog"
         >
             <i class="fa-solid fa-sharp fa-trash"></i>
-            <span class="btn-toggle-label__label">Delete</span>
+            <span class="btn-toggle-label__label"> {{ __('Delete') }}</span>
         </button>
         <a href="{{ route('cms.dashboard.index') }}" class="btn btn-gray btn-toggle-label">
             <i class="fa-solid fa-sharp fa-ban"></i>
-            <span class="btn-toggle-label__label">Cancel</span>
+            <span class="btn-toggle-label__label"> {{ __('Cancel') }}</span>
         </a>
     </div>
 </form>
