@@ -6,15 +6,15 @@
 @section('content')
 <header class="login__heading bg-full bg-landing-1 flow p-v-400">
     <h1 class="fz-900 clr-gray-50 ta-center">
-        <small>Welcome to</small><br />
+        <small>{{ __('Welcome to') }}</small><br />
         <strong>{{ env('APP_NAME', 'Bolierplate Auth Laravel') }}</strong>
     </h1>
-    <p class="fz-500">By {{ env('APP_AUTHOR', 'Davina Leong') }}</p>
+    <p class="fz-500">{{ __('By') }} {{ env('APP_AUTHOR', 'Davina Leong') }}</p>
 </header>
 
 <main class="login__main bg-gray-50">
     <div class="main-content-wrapper flow p-v-400">
-        <h2 class="fz-700">Please login</h2>
+        <h2 class="fz-700">{{ __('Please login') }}</h2>
 
         @include('components.card-message')
         @include('components.card-errors')
@@ -23,7 +23,7 @@
             @csrf
             <div class="form-group @error('email') form-group-danger @enderror">
                 <label for="email" class="form-label">
-                    <i class="fa-duotone fa-envelope"></i> Email
+                    <i class="fa-duotone fa-envelope"></i> {{ __('Email') }}
                 </label>
                 <div class="form-field-wrapper flow">
                     <input
@@ -42,7 +42,7 @@
             </div>
             <div class="form-group @error('password') form-group-danger @enderror">
                 <label for="password" class="form-label">
-                    <i class="fa-duotone fa-key"></i> Password
+                    <i class="fa-duotone fa-key"></i> {{ __('Password') }}
                 </label>
                 <div class="form-field-wrapper flow">
                     <input
@@ -60,14 +60,14 @@
             </div>
             <div class="form-group">
                 <label for="remember_me" class="form-label">
-                    <i class="fa-duotone fa-key"></i> Remember Me
+                    <i class="fa-duotone fa-key"></i> {{ __('Remember Me') }}
                 </label>
                 <div class="form-field-wrapper">
                     <label
                         for="remember_me"
                         class="form-radio-checkbox-wrapper form-radio-checkbox-wrapper-gray"
                         >
-                        Yes
+                        {{ __('Yes') }}
                         <input
                             type="checkbox"
                             name="remember_me"
@@ -82,15 +82,15 @@
 
             <div class="btn-group m-v-t-400">
                 <button class="btn btn-primary" type="submit">
-                    <i class="fa-solid fa-sharp fa-sign-in"></i> Login
+                    <i class="fa-solid fa-sharp fa-sign-in"></i> {{ __('Login') }}
                 </button>
 
                 <a href="{{ route('password.request') }}" class="btn btn-gray">
-                    <i class="fa-solid fa-sharp fa-question"></i> Forgot Password
+                    <i class="fa-solid fa-sharp fa-question"></i> {{ __('Forgot Password') }}
                 </a>
 
                 <a href="{{ route('register') }}" class="btn btn-secondary">
-                    <i class="fa-solid fa-sharp fa-plus"></i> Register
+                    <i class="fa-solid fa-sharp fa-plus"></i> {{ __('Register') }}
                 </a>
             </div>
         </form>

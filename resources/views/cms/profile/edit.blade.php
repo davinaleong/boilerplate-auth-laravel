@@ -7,11 +7,11 @@
 @section('breadcrumbs')
 <ul class="breadcrumbs">
     <li class="breadcrumb-item">
-        <a href="{{ route('cms.profile.show') }}" class="breadcrumb-item__link">Profile</a>
+        <a href="{{ route('cms.profile.show') }}" class="breadcrumb-item__link">{{ __('Profile') }}</a>
     </li>
     <li class="breadcrumb-item">
         <span class="breadcrumb-item__link" data-active="true">
-            Edit
+            {{ __('Edit') }}
         </span>
     </li>
 </ul>

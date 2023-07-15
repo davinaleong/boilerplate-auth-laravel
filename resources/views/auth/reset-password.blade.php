@@ -4,7 +4,7 @@
 
 @section('auth-content')
 <p class="m-v-b-400">
-    Enter your email and your new password to reset it.
+    {{ __('Enter your email and your new password to reset it.') }}
 </p>
 
 @include('components.card-message')
@@ -17,7 +17,7 @@
 
     <div class="form-group @error('email') form-group-danger @enderror">
         <label for="email" class="form-label">
-            <i class="fa-duotone fa-envelope"></i> Email
+            <i class="fa-duotone fa-envelope"></i> {{ __('Email') }}
         </label>
         <div class="form-field-wrapper flow">
             <input
@@ -37,7 +37,7 @@
 
     <div class="form-group @error('password') form-group-danger @enderror">
         <label for="password" class="form-label">
-            <i class="fa-duotone fa-key"></i> Password
+            <i class="fa-duotone fa-key"></i> {{ __('Password') }}
         </label>
         <div class="form-field-wrapper flow">
             <input
@@ -56,7 +56,7 @@
 
     <div class="form-group @error('password_confirmation') form-group-danger @enderror">
         <label for="password_confirmation" class="form-label">
-            <i class="fa-duotone fa-key"></i> Confirm Password
+            <i class="fa-duotone fa-key"></i> {{ __('Confirm Password') }}
         </label>
         <div class="form-field-wrapper flow">
             <input
@@ -75,10 +75,10 @@
 
     <div class="btn-group m-v-t-400">
         <button class="btn btn-primary" type="submit">
-            <i class="fa-solid fa-sharp fa-key"></i> Reset Password
+            <i class="fa-solid fa-sharp fa-key"></i> {{ __('Reset Password') }}
         </button>
         <a href="{{ route('login') }}" class="btn btn-gray">
-            <i class="fa-solid fa-sharp fa-ban"></i> Cancel
+            <i class="fa-solid fa-sharp fa-ban"></i> {{ __('Confirm') }}
         </a>
     </div>
 </form>

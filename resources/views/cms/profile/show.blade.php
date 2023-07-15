@@ -8,7 +8,7 @@
 <ul class="breadcrumbs">
     <li class="breadcrumb-item">
         <span class="breadcrumb-item__link" data-active="true">
-            Profile
+            {{ __('Profile') }}
         </span>
     </li>
 </ul>
@@ -17,7 +17,7 @@
 @section('cms-inner-content')
 <form class="flow" action="#" method="post">
     <fieldset aria-hidden="false">
-        <legend>Profile Details</legend>
+        <legend>{{ __('Profile Details') }}</legend>
 
         <div class="content">
             <div class="form-group">
@@ -87,7 +87,7 @@
     class="dialog | flow ta-center text-danger-800 bg-danger-100 shadow-v-br-400 p-v-400"
     data-element="delete-dialog">
         <header class="dialog__header">
-            <h2 class="fz-600">Delete Item</h2>
+            <h2 class="fz-600">{{ __('Delete Item') }}</h2>
         </header>
         <div class="dialog__body | flow">
             <p>
@@ -131,14 +131,14 @@
                 style="--btn-group-gap: var(--size-v-200)"
                 >
                     <button class="btn btn-danger" type="submit">
-                        <i class="fa-solid fa-sharp fa-trash"></i> Confirm
+                        <i class="fa-solid fa-sharp fa-trash"></i> {{ __('Confirm') }}
                     </button>
                     <button
                         class="btn btn-secondary"
                         type="button"
                         data-element="btn-close-dialog"
                     >
-                        <i class="fa-solid fa-sharp fa-ban"></i> Close
+                        <i class="fa-solid fa-sharp fa-ban"></i> {{ __('Close') }}
                     </button>
                 </div>
             </form>

@@ -4,7 +4,7 @@
 
 @section('auth-content')
 <p class="m-v-b-400">
-    Enter your email and password to create an account.
+    {{ __('Enter your email and password to create an account.') }}
 </p>
 
 @include('components.card-message')
@@ -15,7 +15,7 @@
 
     <div class="form-group @error('name') form-group-danger @enderror">
         <label for="name" class="form-label">
-            <i class="fa-duotone fa-user"></i> Name
+            <i class="fa-duotone fa-user"></i> {{ __('Name') }}
         </label>
         <div class="form-field-wrapper">
             <input
@@ -35,7 +35,7 @@
 
     <div class="form-group @error('email') form-group-danger @enderror">
         <label for="email" class="form-label">
-            <i class="fa-duotone fa-envelope"></i> Email
+            <i class="fa-duotone fa-envelope"></i> {{ __('Email') }}
         </label>
         <div class="form-field-wrapper">
             <input
@@ -55,7 +55,7 @@
 
     <div class="form-group @error('password') form-group-danger @enderror">
         <label for="email" class="form-label">
-            <i class="fa-duotone fa-key"></i> Password
+            <i class="fa-duotone fa-key"></i> {{ __('Password') }}
         </label>
         <div class="form-field-wrapper">
             <input
@@ -74,7 +74,7 @@
 
     <div class="form-group @error('password_confirmation') form-group-danger @enderror">
         <label for="password_confirmation" class="form-label">
-            <i class="fa-duotone fa-key"></i> Confirm Password
+            <i class="fa-duotone fa-key"></i> {{ __('Confirm Password') }}
         </label>
         <div class="form-field-wrapper">
             <input
@@ -93,13 +93,13 @@
 
     <div class="btn-group m-v-t-400">
         <button class="btn btn-primary" type="submit">
-            <i class="fa-solid fa-sharp fa-check"></i> Register
+            <i class="fa-solid fa-sharp fa-check"></i> {{ __('Register') }}
         </button>
         <a href="{{ route('welcome') }}" class="btn btn-gray">
-            <i class="fa-solid fa-sharp fa-ban"></i> Cancel
+            <i class="fa-solid fa-sharp fa-ban"></i> {{ __('Cancel') }}
         </a>
         <a href="{{ route('login') }}" class="btn btn-secondary">
-            <i class="fa-solid fa-sharp fa-sign-in"></i> Login
+            <i class="fa-solid fa-sharp fa-sign-in"></i> {{ __('Login') }}
         </a>
     </div>
 </form>

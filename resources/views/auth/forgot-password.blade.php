@@ -4,7 +4,7 @@
 
 @section('auth-content')
 <p class="m-v-b-400">
-    Enter your email to receive instructions on how to reset your password.
+    {{ __('Enter your email to receive instructions on how to reset your password.') }}
 </p>
 
 @include('components.card-message')
@@ -15,7 +15,7 @@
 
     <div class="form-group @error('email') form-group-danger @enderror">
         <label for="email" class="form-label">
-            <i class="fa-duotone fa-envelope"></i> Email
+            <i class="fa-duotone fa-envelope"></i> {{ __('Email') }}
         </label>
         <div class="form-field-wrapper flow">
             <input
@@ -35,10 +35,10 @@
 
     <div class="btn-group m-v-t-400">
         <button class="btn btn-primary" type="submit">
-            <i class="fa-solid fa-sharp fa-envelope"></i> Email Password Reset Link
+            <i class="fa-solid fa-sharp fa-envelope"></i> {{ __('Email Password Reset Link') }}
         </button>
         <a href="{{ route('login') }}" class="btn btn-gray">
-            <i class="fa-solid fa-sharp fa-ban"></i> Cancel
+            <i class="fa-solid fa-sharp fa-ban"></i> {{ __('Cancel') }}
         </a>
     </div>
 </form>
