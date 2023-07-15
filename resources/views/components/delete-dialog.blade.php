@@ -10,7 +10,7 @@
           This action cannot be undone.
         </p>
       </div>
-      <form method="POST" action="@yield('delete-dialog-action')" class="dialog-footer">
+      <form method="POST" action="{{ $action }}" class="dialog-footer">
         <div
           class="btn-group | jc-center"
           style="--btn-group-gap: var(--size-v-200)"

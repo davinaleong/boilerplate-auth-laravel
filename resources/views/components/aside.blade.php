@@ -13,7 +13,7 @@
                     height="80"
                 />
             </a>
-            <p class="fz-300">User: <a href="{{ route('cms.profile.edit') }}" class="text-primary-500">{{ Auth::user()->name }}</a></p>
+            <p class="fz-300">User: <a href="{{ route('cms.profile.show') }}" class="text-primary-500">{{ Auth::user()->name }}</a></p>
         </div>
         <div class="aside__top__right">
             <form action="{{ route('logout') }}" method="POST">

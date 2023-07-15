@@ -31,7 +31,7 @@ Route::prefix('test-mail')->name('test-mail.')->controller(TestMailController::c
 
 Route::prefix('cms')->name('cms.')->middleware('auth')->group(function () {
     Route::prefix('profile')->name('profile.')->controller(ProfileController::class)->group(function () {
-        Route::get('/', 'index')->name('index');
+        Route::get('/', 'show')->name('show');
         Route::get('/edit', 'edit')->name('edit');
         Route::patch('/', 'update')->name('update');
         Route::delete('/', 'destroy')->name('destroy');

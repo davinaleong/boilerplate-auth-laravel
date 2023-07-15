@@ -12,9 +12,9 @@ use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
-    public function index(Request $request): View
+    public function show(Request $request): View
     {
-        return view('cms.profile.index', [
+        return view('cms.profile.show', [
             'user' => $request->user(),
         ]);
     }
@@ -37,7 +37,7 @@ class ProfileController extends Controller
         $request->user()->save();
 
         return Redirect::route('cms.profile.edit')
-            ->with('message', 'Profile updated.');
+            ->with('status', 'verification-link-sent');
     }
 
     public function destroy(Request $request): RedirectResponse
