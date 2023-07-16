@@ -12,10 +12,11 @@ class ActivityController extends Controller
 {
     public function index()
     {
-        return view('activity.index', [
+        return view('cms.activity.index', [
             'activities' => Activity::where('user_id', Auth::id())
                 ->orderByDesc('created_at')
-                ->paginate(Setting::getListPerPage())
+                // ->paginate(Setting::getListPerPage())
+                ->paginate(env('LIST_PER_PAGE', '100'))
         ]);
     }
 }
