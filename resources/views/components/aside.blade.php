@@ -42,6 +42,11 @@
             </a>
         </li>
         <li class="menu-item" data-active="true" aria-hidden="true">
+            <a href="{{ route('cms.activity.index') }}" class="menu-item__link">
+                <i class="fa-solid fa-sharp fa-chart-line"></i> {{ __('Activity') }}
+            </a>
+        </li>
+        <li class="menu-item" data-active="true" aria-hidden="true">
             <a href="#" class="menu-item__link menu-item__label">
                 <i class="fa-solid fa-sharp fa-boxes"></i> {{ __('Module Pages') }}
             </a>
