@@ -9,13 +9,13 @@ use Tests\TestCase;
 
 /**
  * @group cms
- * @group dashboard
+ * @group activity
  */
-class DashboardControllerTest extends TestCase
+class ActivityTest extends TestCase
 {
     public function test_guest_gets_redirected(): void
     {
-        $response = $this->get('/cms/dashboard');
+        $response = $this->get('/cms/activity');
 
         $response->assertStatus(302);
         $response->assertRedirect('/login');
@@ -26,7 +26,7 @@ class DashboardControllerTest extends TestCase
         $user = User::factory()->create();
 
         $response = $this->actingAs($user)
-            ->get('/cms/dashboard');
+            ->get('/cms/activity');
 
         $response->assertStatus(200);
     }
