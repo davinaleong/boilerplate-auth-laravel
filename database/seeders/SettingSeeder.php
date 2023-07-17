@@ -76,36 +76,6 @@ class SettingSeeder extends Seeder
                 'key' => Setting::$KEY_MAIL_FROM_NAME,
                 'value' => env(Setting::$KEY_MAIL_FROM_NAME, '')
             ],
-            [
-                'user_id' => 1,
-                'name' => 'Blog Mail From Address',
-                'key' => Setting::$KEY_BLOG_MAIL_FROM_ADDRESS,
-                'value' => env(Setting::$KEY_BLOG_MAIL_FROM_ADDRESS, '')
-            ],
-            [
-                'user_id' => 1,
-                'name' => 'Blog Mail From Name',
-                'key' => Setting::$KEY_BLOG_MAIL_FROM_NAME,
-                'value' => env(Setting::$KEY_BLOG_MAIL_FROM_NAME, '')
-            ],
-            [
-                'user_id' => 1,
-                'name' => 'Blog Post URL',
-                'key' => Setting::$KEY_BLOG_POST_URL,
-                'value' => env(Setting::$KEY_BLOG_POST_URL, '')
-            ],
-            [
-                'user_id' => 1,
-                'name' => 'Grecaptcha Site Key',
-                'key' => Setting::$KEY_GRECAPTCHA_SITE_KEY,
-                'value' => env(Setting::$KEY_GRECAPTCHA_SITE_KEY, '')
-            ],
-            [
-                'user_id' => 1,
-                'name' => 'Grecaptcha Secret Key',
-                'key' => Setting::$KEY_GRECAPTCHA_SECRET_KEY,
-                'value' => env(Setting::$KEY_GRECAPTCHA_SECRET_KEY, '')
-            ],
         ]);
     }
 }

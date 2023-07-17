@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Cms;
 
+use App\Helpers\StatusHelper;
 use App\Http\Controllers\Controller;
 use App\Models\Activity;
 use App\Models\Setting;
@@ -12,14 +13,14 @@ class SettingController extends Controller
 {
     public function index()
     {
-        return view('settings.index', [
+        return view('cms.setting.index', [
             'settings' => Setting::paginate(Setting::getListPerPage()),
         ]);
     }
 
     public function edit()
     {
-        return view('settings.edit', [
+        return view('cms.setting.edit', [
             'settings' => Setting::all(),
             'settings_count' => Setting::count()
         ]);
@@ -66,9 +67,9 @@ class SettingController extends Controller
             'user_id' => Auth::id(),
             'message' => 'Settings modified.',
             'label' => 'View Settings',
-            'link' => route('settings.index')
+            'link' => route('cms.setting.index')
         ]);
 
-        return redirect(route('settings.index'))->with('message', 'You have modified settings.');
+        return redirect(route('cms.setting.index'))->with('status', StatusHelper::instance()::$SETTINGS_UPDATED);
     }
 }
