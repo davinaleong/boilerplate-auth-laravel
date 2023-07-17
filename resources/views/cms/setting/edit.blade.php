@@ -18,11 +18,13 @@
 @endsection
 
 @section('cms-inner-content')
-<h2 class="fz-500">{{ __('Actions') }}</h2>
-<div class="btn-group">
-    <a href="{{ route('cms.setting.index') }}" class="btn btn-gray">
-        <i class="fa fa-solid fa-sharp fa-ban"></i> {{ __('Cancel') }}
-    </a>
+<div class="d-flex al-center jc-space-between">
+    <h2 class="fz-500">{{ __('Actions') }}</h2>
+    <div class="btn-group">
+        <a href="{{ route('cms.setting.index') }}" class="btn btn-gray">
+            {{ __('Cancel') }} <i class="fa fa-solid fa-sharp fa-ban"></i>
+        </a>
+    </div>
 </div>
 
 <form method="post" action="{{ route('cms.setting.update') }}">

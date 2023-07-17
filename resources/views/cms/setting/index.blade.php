@@ -15,11 +15,13 @@
 @endsection
 
 @section('cms-inner-content')
-<h2 class="fz-500">{{ __('Actions') }}</h2>
-<div class="btn-group">
-    <a href="{{ route('cms.setting.edit') }}" class="btn btn-primary">
-        {{ __('Edit') }} <i class="fa fa-solid fa-sharp fa-pencil"></i>
-    </a>
+<div class="d-flex al-center jc-space-between">
+    <h2 class="fz-500">{{ __('Actions') }}</h2>
+    <div class="btn-group">
+        <a href="{{ route('cms.setting.edit') }}" class="btn btn-primary">
+            {{ __('Edit') }} <i class="fa fa-solid fa-sharp fa-pencil"></i>
+        </a>
+    </div>
 </div>
 
 <table class="table-collapsible">

@@ -48,32 +48,22 @@
         </li>
         <li class="menu-item" data-active="true" aria-hidden="true">
             <a href="#" class="menu-item__link menu-item__label">
-                <i class="fa-solid fa-sharp fa-boxes"></i> {{ __('Module Pages') }}
+                <i class="fa-solid fa-sharp fa-cogs"></i> {{ __('Settings') }}
             </a>
 
             <div class="sub-menu-wrapper">
                 <div>
                     <ul class="sub-menu flow" role="list">
-                    <li style="--flow-spacer: var(--size-v-100)">
-                        <a href="listing" class="menu-item__link">
-                            <i class="fa-solid fa-sharp fa-list"></i> {{ __('Listing Page') }}
-                        </a>
-                    </li>
-                    <li style="--flow-spacer: var(--size-v-100)">
-                        <a href="cards" class="menu-item__link">
-                            <i class="fa-solid fa-sharp fa-cards-blank"></i> {{ __('Cards Page') }}
-                        </a>
-                    </li>
-                    <li style="--flow-spacer: var(--size-v-100)">
-                        <a href="create-edit" class="menu-item__link">
-                            <i class="fa-solid fa-sharp fa-pencil"></i> {{ __('Create/Edit Page') }}
-                        </a>
-                    </li>
-                    <li style="--flow-spacer: var(--size-v-100)">
-                        <a href="view" class="menu-item__link">
-                            <i class="fa-solid fa-sharp fa-eye"></i> {{ __('View Page') }}
-                        </a>
-                    </li>
+                        <li style="--flow-spacer: var(--size-v-100)">
+                            <a href="{{ route('cms.setting.index') }}" class="menu-item__link">
+                                <i class="fa-solid fa-sharp fa-list"></i> {{ __('Listing') }}
+                            </a>
+                        </li>
+                        <li style="--flow-spacer: var(--size-v-100)">
+                            <a href="{{ route('cms.setting.edit') }}" class="menu-item__link">
+                                <i class="fa-solid fa-sharp fa-pencil"></i> {{ __('Modify') }}
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
