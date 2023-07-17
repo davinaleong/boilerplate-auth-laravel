@@ -8,34 +8,41 @@
 <ul class="breadcrumbs">
     <li class="breadcrumb-item">
         <span class="breadcrumb-item__link" data-active="true">
-            Settings
+            {{ __('Settings') }}
         </span>
     </li>
 </ul>
 @endsection
 
 @section('cms-inner-content')
-    <table class="table-collapsible">
+<h2 class="fz-500">{{ __('Actions') }}</h2>
+<div class="btn-group">
+    <a href="{{ route('cms.setting.edit') }}" class="btn btn-primary">
+        {{ __('Edit') }} <i class="fa fa-solid fa-sharp fa-pencil"></i>
+    </a>
+</div>
+
+<table class="table-collapsible">
     <caption>
-        Settings Table
+        {{ __('Settings Table') }}
     </caption>
     <thead>
         <tr>
-            <th>User</th>
-            <th>Name</th>
-            <th>Key</th>
-            <th>Value</th>
-            <th>Created At</th>
+            <th>{{ __('User') }}</th>
+            <th>{{ __('Name') }}</th>
+            <th>{{ __('Key') }}</th>
+            <th>{{ __('Value') }}</th>
+            <th>{{ __('Created At') }}</th>
         </tr>
     </thead>
     <tbody>
         @foreach ($settings as $setting)
             <tr>
-                <td data-cell="User">{{ $setting->getUserName() }}</td>
-                <td data-cell="Name">{{ $setting->name }}</td>
-                <td data-cell="Key">{{ $setting->key }}</td>
-                <td data-cell="Value">{{ $setting->value }}</td>
-                <td data-cell="Created At">{{ $setting->getCreatedAt() }}</td>
+                <td data-cell="{{ __('User') }}">{{ $setting->getUserName() }}</td>
+                <td data-cell="{{ __('Name') }}">{{ $setting->name }}</td>
+                <td data-cell="{{ __('Key') }}">{{ $setting->key }}</td>
+                <td data-cell="{{ __('Value') }}">{{ $setting->value }}</td>
+                <td data-cell="{{ __('Created At') }}">{{ $setting->getCreatedAt() }}</td>
             </tr>
         @endforeach
     </tbody>

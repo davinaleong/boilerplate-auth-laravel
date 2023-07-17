@@ -26,7 +26,7 @@ class SettingController extends Controller
         ]);
     }
 
-    public function store(Request $request)
+    public function update(Request $request)
     {
         $request->validate([
             'names' => 'required|array',
