@@ -9,9 +9,9 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 /**
+ * @group unit
  * @group base
  * @group activity
- * @group unit
  */
 class ActivityTest extends TestCase
 {

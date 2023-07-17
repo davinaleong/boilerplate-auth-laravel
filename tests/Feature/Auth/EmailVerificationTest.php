@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\URL;
 use Tests\TestCase;
 
 /**
+ * @group feature
+ * @group base
  * @group auth
  */
 class EmailVerificationTest extends TestCase

@@ -8,6 +8,8 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 /**
+ * @group feature
+ * @group base
  * @group auth
  */
 class AuthenticationTest extends TestCase

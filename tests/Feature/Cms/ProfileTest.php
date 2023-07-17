@@ -7,6 +7,8 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 /**
+ * @group feature
+ * @group base
  * @group cms
  * @group profile
  */

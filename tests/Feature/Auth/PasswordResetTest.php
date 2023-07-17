@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Notification;
 use Tests\TestCase;
 
 /**
+ * @group feature
+ * @group base
  * @group auth
  */
 class PasswordResetTest extends TestCase

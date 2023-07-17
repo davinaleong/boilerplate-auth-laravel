@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Hash;
 use Tests\TestCase;
 
 /**
+ * @group feature
+ * @group base
  * @group auth
  */
 class PasswordUpdateTest extends TestCase

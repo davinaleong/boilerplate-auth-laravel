@@ -8,6 +8,8 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 /**
+ * @group feature
+ * @group base
  * @group cms
  * @group activity
  */

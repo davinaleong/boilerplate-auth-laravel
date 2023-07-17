@@ -7,6 +7,8 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 /**
+ * @group feature
+ * @group base
  * @group welcome
  */
 class WelcomeTest extends TestCase
