@@ -28,23 +28,23 @@
 <form method="post" action="{{ route('cms.setting.update') }}">
     @csrf
     @method('PATCH')
-    <table class="table-collapsible" data-element="setting-table">
+    <table class="table-collapsible" data-element="table-form">
         <caption>
             {{ __('Settings Table') }}
         </caption>
         <thead>
             <tr>
-                <th>{{ __('User') }}</th>
-                <th>{{ __('Name') }}</th>
-                <th>{{ __('Key') }}</th>
-                <th>{{ __('Value') }}</th>
-                <th>&nbsp;</th>
+                <th data-element="th-user">{{ __('User') }}</th>
+                <th data-element="th-name">{{ __('Name') }}</th>
+                <th data-element="th-key">{{ __('Key') }}</th>
+                <th data-element="th-value">{{ __('Value') }}</th>
+                <th data-element="th-delete">&nbsp;</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($settings as $setting)
+            @foreach ($settings as $key=>$setting)
                 <tr>
-                    <td data-cell="{{ __('User') }}">
+                    <td data-cell="{{ __('User') }}" @if($key == 0) data-element="user-name" @endif>
                         {{ $setting->getUserName() }}
                     </td>
                     <td data-cell="{{ __('Name') }}">
@@ -60,7 +60,8 @@
                                         value="{{ $setting->value }}" required>
                     </td>
                     <td>
-                        <button type="button" class="btn btn-danger" data-element="btn-delete-setting">
+                        <button type="button" class="btn btn-danger"
+                            onclick="this.parentNode.parentNode.remove();">
                             <i class="fa fa-trash"></i>
                         </button>
                     </td>
