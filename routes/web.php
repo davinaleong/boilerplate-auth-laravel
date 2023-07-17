@@ -5,6 +5,7 @@ use App\Http\Controllers\TestMailController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\Cms\DashboardController;
 use App\Http\Controllers\Cms\ActivityController;
+use App\Http\Controllers\Cms\SettingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,6 +42,11 @@ Route::prefix('cms')->name('cms.')->middleware('auth')->group(function () {
     Route::middleware('verified')->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
         Route::get('/activity', [ActivityController::class, 'index'])->name('activity.index');
+        Route::prefix('setting')->name('setting.')->controller(SettingController::class)->group(function () {
+            Route::get('/', 'index')->name('index');
+            Route::get('/edit', 'edit')->name('edit');
+            Route::patch('/', 'update')->name('update');
+        });
     });
 });
 
