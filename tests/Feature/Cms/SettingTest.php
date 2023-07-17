@@ -20,7 +20,7 @@ class SettingTest extends TestCase
 
     public function test_guest_gets_redirected_from_index()
     {
-        $this->get('cms/settings')
+        $this->get('cms/setting')
             ->assertStatus(302)
             ->assertRedirect('/login');
     }
@@ -30,13 +30,13 @@ class SettingTest extends TestCase
         $user = User::factory()->create();
 
         $this->actingAs($user)
-            ->get('cms/settings')
+            ->get('cms/setting')
             ->assertOk();
     }
 
     public function test_guest_gets_redirected_from_edit()
     {
-        $this->get('cms/settings/edit')
+        $this->get('cms/setting/edit')
             ->assertStatus(302)
             ->assertRedirect('/login');
     }
@@ -46,13 +46,13 @@ class SettingTest extends TestCase
         $user = User::factory()->create();
 
         $this->actingAs($user)
-            ->get('cms/settings/edit')
+            ->get('cms/setting/edit')
             ->assertOk();
     }
 
     public function test_guest_cannot_store_settings()
     {
-        $this->post('cms/settings')
+        $this->patch('cms/setting')
             ->assertStatus(302)
             ->assertRedirect('/login');
     }
@@ -64,7 +64,7 @@ class SettingTest extends TestCase
         $activity = Activity::factory()->make([
             'message' => 'Settings modified.',
             'label' => 'View Settings',
-            'link' => route('settings.index')
+            'link' => route('cms.setting.index')
         ]);
 
         $names = [];
@@ -78,14 +78,13 @@ class SettingTest extends TestCase
         }
 
         $response = $this->actingAs($user)
-            ->post('cms/settings', [
+            ->patch('cms/setting', [
                 'names' => $names,
                 'keys' => $keys,
                 'values' => $values,
             ]);
 
         $response->assertStatus(302);
-        $response->with('message', 'Settings modified.');
 
         foreach ($settings as $setting) {
             $this->assertDatabaseHas('settings', [
@@ -109,7 +108,7 @@ class SettingTest extends TestCase
         $user = User::factory()->create();
 
         $response = $this->actingAs($user)
-            ->post('cms/settings', [
+            ->patch('cms/setting', [
                 'names' => [],
                 'keys' => [],
                 'values' => [],
